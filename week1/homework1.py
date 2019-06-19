@@ -10,6 +10,19 @@ print("Kelime Susleme")
 kelime= input("Kelime yaziniz:")
 print("*"*((len(kelime)*3)+2),"\n","*",' '*len(kelime),kelime, ' '*len(kelime), '*',"\n","*",' '*len(kelime),"-"*len(kelime), ' '*len(kelime), '*',"\n","*"*((len(kelime)*3)+2),sep="")
 
+print("""
+                        ********************
+                   **                          **
+                **                                  **
+            **                                          **
+        **                                                  ** \n""","\t\t\t\t", kelime,"\n","\t\t\t\t","_"*len(kelime),"""\n
+
+        **                                                  **
+            **                                          **
+                **                                  **
+                    **                          **
+                        ********************
+        """,sep="")
 
 ##2-
 ##Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile dönüştürün ve sonucu ekrana printleyin.
