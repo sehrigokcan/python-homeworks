@@ -121,13 +121,13 @@ while anahtar==1:
   elif sayi==tahmin:
     anahtar=0
     if sayac==4 or sayac==5:
-      print("Tebrikler 1 yildiz kazandiniz.")
+      print("Tebrikler", "\u2b50" ," kazandiniz.")
       
     elif sayac==2 or sayac==3:
-      print("Tebrikler 2 yildiz kazandiniz.")
+      print("Tebrikler", "\u2b50" * 2 ," kazandiniz.")
      
     else:
-      print("Tebrikler 3 yildiz kazandiniz.")
+      print("Tebrikler", "\u2b50" * 3 ," kazandiniz.")
   if sayi!=tahmin and sayac==5:
     print("Deneme hakkin bitti :( ")
     anahtar=0
@@ -166,7 +166,7 @@ while cikis==' ':
     miktar=float(input("Yatirmak istediginiz miktari giriniz: "))
     hesap+=miktar
     print("Bakiyenizde ",hesap," Euro bulunuyor.")
-    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)")
+    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    ")
     if kontrol=='evet':
       cikis=' '
     else:
@@ -176,7 +176,7 @@ while cikis==' ':
     if hesap<miktar:
       print("Boyle bir islem yapamazsiniz.")
       print("Bakiyenizde ",hesap," Euro bulunuyor.")
-      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)")
+      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    ")
       if kontrol=='evet':
         cikis=' '
       else:
@@ -184,14 +184,14 @@ while cikis==' ':
     else:
       hesap-=miktar
       print("Bakiyenizde ",hesap," Euro bulunuyor.")
-      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)")
+      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)     ")
       if kontrol=='evet':
         cikis=' '
       else:
         cikis="a"
   else:
     print("Yanlis bir islem yaptiniz.")
-    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)")
+    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    ")
     if kontrol=='evet':
       cikis=' '
     else:
