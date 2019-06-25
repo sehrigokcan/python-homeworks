@@ -4,10 +4,10 @@
 
 print("Dogum Tarihini Gir Burcunu Ogren")
 
-dogumgunu= int(input('Dogum tarihinizi giriniz(Gun) : '))
-dogumayi= input('Dogum ayinizi giriniz(Ay) : ')
+dogumgunu= int(input('Dogum tarihinizi giriniz(Gun) : '))   #Kullanicidan dogum tarihinin gunu integer veri tipiyle aldik
+dogumayi= input('Dogum ayinizi giriniz(Ay) : ')     #Kullanicidan dogum tarihinin ayini string veri tipiyle aldik
 
-if (dogumayi=='mart' and (dogumgunu<31 or dogumgunu>=22)) or (dogumayi=='nisan' and (dogumgunu>1 or dogumgunu<=22)):
+if (dogumayi=='mart' and (dogumgunu<31 or dogumgunu>=22)) or (dogumayi=='nisan' and (dogumgunu>1 or dogumgunu<=22)):   # Kosul (ay ve tarih araligi) ve (diger ay ve tarih araligi)
   print("Burcunuz: Koc")
                                                              
 elif (dogumayi=='nisan' and (dogumgunu<31 and dogumgunu>=21)) or (dogumayi=='mayis' and (dogumgunu>1 and dogumgunu<=21)):
@@ -42,7 +42,7 @@ elif (dogumayi=='ocak' and (dogumgunu<31 and dogumgunu>=21)) or (dogumayi=='suba
                                                                
 elif (dogumayi=='subat' and (dogumgunu<31 and dogumgunu>=20)) or (dogumayi=='mart' and (dogumgunu>1 and dogumgunu<=21)):
   print("Burcunuz: Balik")
-else:
+else:  # degilse yanlis islem yaptiniz 
   print("Yanlis bir giris yaptiniz.")
 
 
@@ -52,17 +52,17 @@ else:
 ##        2-donusturmek istedigi birimin uzunlugu kactir?
 ##    Donusum yapilacak birimler mil ve kilometre olacak.
 
-secim = int(input("Donusum yapmak istediginiz nedir?\nKm- Mil ise 1,\nMil- Km ise 2 yaziniz: "))
+secim = int(input("\n KM MIL HESAPLAMA \nDonusum yapmak istediginiz nedir?\nKm- Mil ise 1,\nMil- Km ise 2 yaziniz: ")) # kullanicidan secim yapmasi istendi
 
-if secim==1:
-  km=float(input("Km: "))
-  mil=km*0.62137
-  print("Mil: ",mil,"dir")
+if secim==1:   # eger secim 1 ise yani km-mil ise 
+  km=float(input("Km: ")) # Kullanicidan km degeri alindi
+  mil=km*0.62137  # formul
+  print("Mil: ",mil,"dir")  # Sonuc gosterildi
   
-else:
-  mil=float(input("Mil: "))
-  km=mil/0.62137
-  print("Km: ",km,"dir")
+else:   # degilse 
+  mil=float(input("Mil: "))  #kullanicidan mil degeri istendi
+  km=mil/0.62137   # formul
+  print("Km: ",km,"dir")  # sonuc gosterildi 
   
 
 ##3.ODEV: PAROLA KARAKTER KONTROLU
@@ -73,28 +73,29 @@ else:
 ##Iki durumun sartlari da saglaniyorsa username ve parolayi hem ekrana printleyin hem de bir dosyaya kaydedin.
 
 
-print(""" KAYIT
+print("""\n KAYIT ISLEMI
 *Kullanici adi 3-18 karakteri arasinda olmali ve rakam kullanilmamalidir.)
 *Parolaniz 6-12 karakter araliginda olmalidir. """)
-sayac=1
-while sayac==1:
-  kullaniciadi= input("Kullanici Adiniz: ")
+anahtar=1        # while kontrolu icin dongusu icin sayac tanimlandi 
+while anahtar==1:   # kullanici adini dogru girene kadar istenecegi icin dongu kullanildi
+  kullaniciadi= input("Kullanici Adiniz: ")  # once kullanici adi alindi
   
-  if len(kullaniciadi)<3 or len(kullaniciadi)>18:
-    print("Kullanici adinizda 3-18 araliginda karakter kullanmalisiniz. ")
-  else:
-    sayac=0
+  if len(kullaniciadi)<3 or len(kullaniciadi)>18:  # eger 3ten kucuk veya 18den buyuk ise 
+    print("Kullanici adinizda 3-18 araliginda karakter kullanmalisiniz. ")  # uyari veriyor 
+  else:   # degilse dogru giris yapilmistir donguden cikmak icin anahtar=0 degeri verilerek dongu durduruluyor 
+    anahtar=0 
     
-sayac2=1
-while sayac2==1:
+anahtar2=1   # sifre icin ayni kontrol yapiliyor 
+while anahtar2==1:
   sifre=input("Sifrenizi giriniz: ")
   if len(sifre)<6 or len(sifre)>12:
     print("Parolaniz 6-12 karakter araliginda olmalidir.")
   else:
-    sayac2=0
-print("\nKullanici adiniz: ", kullaniciadi," Parolaniz: ",sifre)
-dosya=open("dosya.txt","w")
-print(sifre,file=dosya)
+    anahtar2=0
+print("\nDosyaya kaydediliyor....")  
+print("\nKullanici adiniz: ", kullaniciadi,"\nParolaniz: ",sifre)
+dosya=open("dosya.txt","w")  # dosya.txt adli w kipinde dosya aciliyor 
+print(sifre,file=dosya)    # yazdirma islemi yapiliyor 
 
   
   
@@ -107,30 +108,29 @@ print(sifre,file=dosya)
 
 
 
-print("1 den 10a kadar bir sayi tuttum bil bakalim..5 deneme hakkin var")
-sayi=5
-sayac=0
-yildiz=0
-anahtar=1
-while anahtar==1:
-  tahmin=int(input("Tahmininiz: "))
-  sayac+=1
-  if sayi!=tahmin:
-    print("Bilemedin...")
+print("\n1 den 10a kadar bir sayi tuttum bil bakalim..5 deneme hakkin var")
+sayi=5  # sayim 5 
+sayac=0 # 5 deneme hakkini kontrol edecek degiskenim
+anahtar=1  # donguyu kontrol edecek degiskenim
+while anahtar==1: # anahtar=1 ise donguyu islet
+  tahmin=int(input("Tahmininiz: "))  # Kullanicidan tahmin isteniyor 
+  sayac+=1  # sayac 1 artiriliyor ki tahmin sayisi kontrol edilsin
+  if sayi!=tahmin: # eger tuttugum sayi ile ayni degilse 
+    print("Bilemediniz...") # mesaj donduruluyor 
     
-  elif sayi==tahmin:
-    anahtar=0
-    if sayac==4 or sayac==5:
-      print("Tebrikler", "\u2b50" ," kazandiniz.")
+  elif sayi==tahmin:  # tuttugum sayi ile ayniysa 
+    anahtar=0  # donguden cik 
+    if sayac==4 or sayac==5: # kac yildiz alacagini hesap etmek icin sayaci kullaniyoruz 4 - 5 ise 
+      print("Tebrikler", "\u2b50" ," kazandiniz.") # tek yildiz kazandi \u2b50 yildiz seklinin unicode karsiligi 
       
-    elif sayac==2 or sayac==3:
-      print("Tebrikler", "\u2b50" * 2 ," kazandiniz.")
+    elif sayac==2 or sayac==3:   # eger 2 veya 3 denemeden bildi ise 
+      print("Tebrikler", "\u2b50" * 2 ," kazandiniz.") # 2 yildiz kazandi yildiz sekli 2 ile carpildi
      
-    else:
-      print("Tebrikler", "\u2b50" * 3 ," kazandiniz.")
-  if sayi!=tahmin and sayac==5:
-    print("Deneme hakkin bitti :( ")
-    anahtar=0
+    else: # degilse ilk denemede bilmistir 
+      print("Tebrikler", "\u2b50" * 3 ," kazandiniz.") # 3 yildiz kazandi 
+  if sayi!=tahmin and sayac==5:  # 5 deneme kontrolu icin while icindeyken kontrol ediliyor sayi dogru tahmin edilemediyse ve sayac 5se yani deneme hakki bittiyse
+    print("Deneme hakkiniz bitti :( ") # kullaniciyi bilgilendir 
+    anahtar=0  #donguden cik 
    
 
 
@@ -143,71 +143,74 @@ while anahtar==1:
 ##    Kullanici hesabinda olan paradan fazla para cekmek isterse uyarin ve islemi yapamayacagini soyleyin.
 ##    2. ve 3. islemler sonucunda guncel bakiyeyi kullaniciya gosterin. Baska bir islem yapmak isteyip istemedigini sorun.
 
-hesap=1000.0
+bakiye=1000.0  # hesabimda varsayilan para 
 print("""
 Yapabileceginiz islemler:
 1-bakiye kontrolu
 2-para yatirma
 3-para cekme
-""")
-cikis=' '
-while cikis==' ':
-  secim=int(input("Istediginiz islemi secmek icin numarasini girin: "))
-  if secim==1:
-    print("Bakiyenizde ",hesap," Euro bulunuyor.")
+""")   # kullaniciyi bilgilendirme 
+cikis=' '  
+while cikis==' ': # cikti degeri " " oldugu surece donguyu dondur 
+  secim=int(input("Istediginiz islemi secmek icin numarasini girin: "))  # kullanicidan secim yapmasi isteniyor
+  if secim==1:   # 1 ise 
+    print("Bakiyenizde ",bakiye," Euro bulunuyor.") # bakiyeyi yazdir 
     
-    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)")
+    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)   : ")  # devam edip isteyip istemedigini sor 
+    if kontrol=='evet': # evetse 
+      cikis=' ' # dngu sarti devam
+    else:
+      cikis="a" # hayirsa dongu sartini degistir 
+    
+  elif secim==2:  # 2 ise 
+    miktar=float(input("Yatirmak istediginiz miktari giriniz: ")) # miktari al
+    bakiye+=miktar # bakiyeye ekle 
+    print("Bakiyenizde ",bakiye," Euro bulunuyor.") # guncel bakiyeyi yazdir 
+
+    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    :") # tekrar sor islem yapip yapmak istemedigini
     if kontrol=='evet':
       cikis=' '
     else:
       cikis="a"
-    
-  elif secim==2:
-    miktar=float(input("Yatirmak istediginiz miktari giriniz: "))
-    hesap+=miktar
-    print("Bakiyenizde ",hesap," Euro bulunuyor.")
-    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    ")
-    if kontrol=='evet':
-      cikis=' '
-    else:
-      cikis="a"
-  elif secim==3:
-    miktar=float(input("Cekmek istediginiz miktari giriniz: "))
-    if hesap<miktar:
-      print("Boyle bir islem yapamazsiniz.")
-      print("Bakiyenizde ",hesap," Euro bulunuyor.")
-      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    ")
+
+  elif secim==3:  # 3 ise 
+    miktar=float(input("Cekmek istediginiz miktari giriniz: ")) # miktari al 
+    if bakiye<miktar:  # istenilen miktar bakiyede yoksa 
+      print("Boyle bir islem yapamazsiniz.") # uyar 
+      print("Bakiyenizde ",bakiye," Euro bulunuyor.") # hesabi goster 
+      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    :")  #cikis kontrol 
       if kontrol=='evet':
         cikis=' '
       else:
         cikis="a"
-    else:
-      hesap-=miktar
-      print("Bakiyenizde ",hesap," Euro bulunuyor.")
-      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)     ")
+    else:  # bakiyede istenilen miktar varsa 
+      bakiye-=miktar # bakiyeden cikar 
+      print("Bakiyenizde ",bakiye," Euro bulunuyor.")  #guncel bakiyeyi goster 
+      kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)     :") #cikis kontrol yap
       if kontrol=='evet':
         cikis=' '
       else:
         cikis="a"
-  else:
-    print("Yanlis bir islem yaptiniz.")
-    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    ")
+  else:  # islemlerden hicbiri degilse 
+    print("Yanlis bir islem yaptiniz.")  # uyar 
+    kontrol=input("\nBaska bir islem yapmak istiyor musunuz(evet / hayir)    :") # cikis kontrolu yap
     if kontrol=='evet':
       cikis=' '
     else:
       cikis="a"
   
   
-  
-
-
-
-
-
-
-
-
-
+  #FEEDBACK 
+  #1. Kodlar calisiyor
+  #2. 3. soruda sayinin 1 10 araliginda oldugu kontrolu yok bu acik olabilir mi bilemedim.
+  #3. mantik hatasi da yok 
+  #4. degisken isimleri anlasilir
+  #5. gereksiz tekrar var ama istenilen program boyle oldugu icin tekrar ettirdim
+  #6. algoritmalar mantikli
+  #7. yorum ekledim hersey icin
+  #8.isledigim konular kapsaminda olmasi icin gayret ettim :) bazi kodlarin ne kadar buyuk nimet oldugunu anladim 
+  #9. Kodlar tamamen ozgun bana ait.. 
+  #10.Olabilecek en kisa hali 
 
 
 
