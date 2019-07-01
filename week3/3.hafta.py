@@ -25,34 +25,52 @@ while True:        # kullanicinin varolan kullaniciadi secmesi ihtimalinden kodl
 
 
 ##2.ODEV: SAYI TAHMIN OYUNU
-##   Bir degiskene 0-100 arasinda bir deger atayin. Kullanicidan bu sayiyi tahmin etmesini isteyin. Kullaniciyi yaptigi tahminlere gore yonlendirin. Kacinci denemede bildigini soyleyin.
+##   Bir degiskene 0-100 arasinda bir deger atayin. 
+# Kullanicidan bu sayiyi tahmin etmesini isteyin. 
+# Kullaniciyi yaptigi tahminlere gore yonlendirin. Kacinci denemede bildigini soyleyin.
 
 
 print("""
 \tSAYI TAHMIN OYUNU
 """)
-
-sayi=78
+#WHILE DONGUSU ILE
+sayi=78  # tuttugum sayi 
 thmn=0
-while True:
-  tahmin=int(input("Tahmininiz: "))
-  thmn+=1
-  if (tahmin==sayi):
-    print("Tebrikler...",thmn,". denemende bildin...")
-    break
-  elif tahmin>sayi :
-    if tahmin-sayi<=5:
+while True:     #bulana kadar donguyu dondur 
+  tahmin=int(input("Tahmininiz: ")) #  kullanicidan tahmini al 
+  thmn+=1 # deneme sayisini bulmak icin degiskeni 1 arttir
+  if (tahmin==sayi):     # eger dogruysa
+    print("Tebrikler...",thmn,". denemende bildin...")  # tebrik edip 
+    break  # donguden cik 
+  elif tahmin>sayi :  # tahmin buyukse 
+    if tahmin-sayi<=5:  # ve tahmin ile sayi arasinda fark 5 ise yani cok yaklastiysa 
       print("Ooo cok yaklastin.. Hadi bakalim ... Biraz daha asagi..")
-    else:
+    else:  #degilse 
       print("Fazla yukari ciktin daha kucuk sayi...")
-  elif(tahmin<sayi):
-    if sayi-tahmin<=5:
+  elif(tahmin<sayi):  # # eger tahmin edilen sayi kucukse 
+    if sayi-tahmin<=5:  # ve yaklasik bir sayi girildiyse 
       print("Ooo cok yaklastin.. Hadi bakalim ... Biraz daha yukari..")
     else:
       print("Fazla yukari ciktin daha buyuk sayi...")
 
+# For dongusu ile 
 
-
+sayi=78  # tuttugum sayi 
+for  i in range(1,50):     #bulana kadar azami 50 deneme hakki verdik 
+  tahmin=int(input("Tahmininiz: ")) # kullanicidan tahmini al 
+  if (tahmin==sayi):    # eger dogruysa 
+    print("Tebrikler...",i,". denemende bildin...") # tebrik edip 
+    break # donguden cikiyoruz 
+  elif tahmin>sayi :  # tahmin buyukse 
+    if tahmin-sayi<=5:  
+      print("Ooo cok yaklastin.. Hadi bakalim ... Biraz daha asagi..")  # bu uyariyi ver 
+    else:  # degilse 
+      print("Fazla yukari ciktin daha kucuk sayi...")  #bu uyariyi ver 
+  elif(tahmin<sayi):  # eger tahmin edilen sayi kucukse 
+    if sayi-tahmin<=5:  # ve yaklasik bir sayi girildiyse 
+      print("Ooo cok yaklastin.. Hadi bakalim ... Biraz daha yukari..")  # bu uyariyi ver 
+    else:  # degilse 
+      print("Fazla yukari ciktin daha buyuk sayi...")  # bu uyariyi ver 
 
 
 
