@@ -3,22 +3,28 @@
 #Her gırıste dosyadakı bılgıler sıfırlanmasın kayıt bılgılerı dosyaya eklenmeye devam etsın.
 #Kullanici daha once girilmis olan bir kullanici adiyla hesap olusturmak isterse, bu kullanici adinin daha once secildigini ve baska bir kullanici adiyla hesap olusturmasini isteyin.
 
-print("\t HESAP OLUSTUR \n")
-while True:        # kullanicinin varolan kullaniciadi secmesi ihtimalinden kodlari dongu icine aldik
-  kullaniciadi=str(input("Kullanici Adiniz: "))  
-  parola=str(input("Parolaniz: "))
+print("\t HESAP OLUSTUR \n 1. Hesap Olustur/n 2. Cikis icin tiklayiniz")
+secim= str(input("Seciminiz:"))
+if secim=="2":
+  print("Program kapatiliyor")
+elif secim=='1':
+  while True:        # kullanicinin varolan kullaniciadi secmesi ihtimalinden kodlari dongu icine aldik
+    kullaniciadi=str(input("Kullanici Adiniz: "))  
+    parola=str(input("Parolaniz: "))
+    file=open("HesapBilgileri.txt","r")  # dosyamizi readable olarak actik
+    veri=file.read() # dosya icindeki verileri string deger olarak veri degiskenine atadik 
+    if kullaniciadi in veri:  # eger veri degiskeninde yani dosya icinde kullaniciadi varsa 
+      print("Bu kullanici adi daha once alinmis. Lutfen baska bir kullanici adi seciniz.") #uyar
+    else: #degilse 
+      file=open("HesapBilgileri.txt","a")  # dosyayi sonradan eklenebilir actik
+      veri=kullaniciadi+"\t"+parola+"\n"  # girecegimiz degeri veri degiskenine atadik 
+      file.write(veri)  # dosyaya yazdirdik 
+      file.close()  #kapattik
+      print("Hesabiniz basariyla olusturuldu..")  # kullaniciya bilgi mesaji verdik
+      break  # islem tamamlandigina gore donguden ciktik 
+else:
+  print("Yanlis bir islem yaptiniz..")
 
-  file=open("HesapBilgileri.txt","r")  # dosyamizi readable olarak actik
-  veri=file.read() # dosya icindeki verileri string deger olarak veri degiskenine atadik 
-  if kullaniciadi in veri:  # eger veri degiskeninde yani dosya icinde kullaniciadi varsa 
-    print("Bu kullanici adi daha once alinmis. Lutfen baska bir kullanici adi seciniz.") #uyar
-  else: #degilse 
-    file=open("HesapBilgileri.txt","a")  # dosyayi sonradan eklenebilir actik
-    veri=kullaniciadi+"\t"+parola+"\n"  # girecegimiz degeri veri degiskenine atadik 
-    file.write(veri)  # dosyaya yazdirdik 
-    file.close()  #kapattik
-    print("Hesabiniz basariyla olusturuldu..")  # kullaniciya bilgi mesaji verdik
-    break  # islem tamamlandigina gore donguden ciktik 
 
 
 
@@ -115,44 +121,64 @@ print("Dosyaniz ayiklandi...")
 # Kullanicidan hangi seklin alanini veya hangi sekildeki cismin hacmini hesaplamak istedigini sormalisiniz ve o islem icin gereken verileri isteyip hesaplamayi yapmalisiniz.
 #Tum bu islemleri yaparken hata alinabilecek durumlari ongorerek gerekli onlemleri almalisiniz.
 menu="""
-\t\tALAN HESAPLAMALARI
-\t1.Kare
-\t2.Ucgen
-\t3.Dikdortgen
-
-\t\tHACIM HESAPLAMALARI
-\t4. Kup
-\t5. Kure
-\t6. Koni
-Istenen hesaplamanin numarasini giriniz.
-Cikmak isterseniz "q" basiniz...
+1-Alan islemleri
+2-Hacim islemleri
+3-Cikis
 """
-print(menu)
+
+menualan="""
+\t\tALAN HESAPLAMALARI
+\ta.Kare
+\tb.Ucgen
+\tc.Dikdortgen"""
+
+menuhacim="""
+\t\tHACIM HESAPLAMALARI
+\ta. Kup
+\tb. Kure
+\tc. Koni
+
+"""
+
 
 while True:
-  islem=input("\nIstediginiz islemin numarasini giriniz: ")
+  print(menu)
+  islem=str(input("\nIstediginiz islemin numarasini giriniz: "))
   if islem=="1":
-    kenar=float(input("Karenin bir kenar uzunlugunu giriniz: "))
-    print("Karenin Alani: " , pow(kenar,2), " m²")
+    print(menualan)
+    islem2=str(input("Istediginiz alan hesabi icin numarasini giriniz: "))
+    if islem2=="a":
+      kenar=float(input("Karenin bir kenar uzunlugunu giriniz: "))
+      print("Karenin Alani: " , pow(kenar,2), " m²")
+    elif islem2=="b":
+      tabanuzunlugu=float(input("Taban uzunlugunu giriniz: "))
+      yukseklik=float(input("Yukseklik degerini giriniz: "))
+      print("Ucgenin Alani: ", (tabanuzunlugu*yukseklik)/2, " m²")
+    elif islem2=="c":
+      kenar1=float(input("Kenar uzunlugunu giriniz: "))
+      kenar2=float(input("Kenar uzunlugu giriniz: "))
+      print("Dikdortgenin Alani: ", kenar1*kenar2, " m²")
+    else:
+      print("Yanlis bir islem yaptiniz..Lutfen menudeki degerlerden birini giriniz..\n",menualan)
+      pass
+
   elif islem=="2":
-    tabanuzunlugu=float(input("Taban uzunlugunu giriniz: "))
-    yukseklik=float(input("Yukseklik degerini giriniz: "))
-    print("Ucgenin Alani: ", (tabanuzunlugu*yukseklik)/2, " m²")
+    print(menuhacim)
+    islem2=str(input("Istediginiz hacim hesabi icin numarasini giriniz: "))
+    if islem=="a":
+      kenar=float(input("Kupun bir kenar uzunlugunu giriniz: "))
+      print("Kupun Hacmi: " , pow(kenar,3), " m³")
+    elif islem=="b":
+      yaricap=float(input("Yaricapi giriniz: "))
+      print("Kurenin Hacmi(♎ 3 alirsak): ",4/(3*3*pow(yaricap,3))," m³")
+    elif islem=="c":
+      yaricap=float(input("Yaricapi giriniz: ")) 
+      yukseklik=float(input("Yukseklik degerini giriniz: "))
+      print("Koninin Hacmi: (♎ 3 alirsak)", (1/3)*3*pow(yaricap,2)*yukseklik, " m³")
+    else:
+      print("Yanlis bir islem yaptiniz..Lutfen menudeki degerlerden birini giriniz..\n",menuhacim)
+      pass
   elif islem=="3":
-    kenar1=float(input("Kenar uzunlugunu giriniz: "))
-    kenar2=float(input("Kenar uzunlugu giriniz: "))
-    print("Dikdortgenin Alani: ", kenar1*kenar2, " m²")
-  elif islem=="4":
-    kenar=float(input("Kupun bir kenar uzunlugunu giriniz: "))
-    print("Kupun Hacmi: " , pow(kenar,3), " m³")
-  elif islem=="5":
-    yaricap=float(input("Yaricapi giriniz: "))
-    print("Kurenin Hacmi(♎ 3 alirsak): ",4/(3*3*pow(yaricap,3))," m³")
-  elif islem=="6":
-    yaricap=float(input("Yaricapi giriniz: ")) 
-    yukseklik=float(input("Yukseklik degerini giriniz: "))
-    print("Koninin Hacmi: (♎ 3 alirsak)", (1/3)*3*pow(yaricap,2)*yukseklik, " m³")
-  elif islem=="q":
     print("Gule gule... ")
     break
   else:
@@ -195,10 +221,10 @@ print("\tASAL SAYI KONTROLU ")
 sayi=int(input("Sayi giriniz: "))
 for i in range(2,sayi):  # eger sayi 1 haric 2 den kendi degerine kadar hicbir sayi ile bolunmuyorsa asaldir 
   if sayi%i==0:  # sayinin kendisinden kucuk her degerle bolunup bolunmedigi kontrolu yapiliyor 
-    print("Sayi Asal Degil...")  # bolunmusse asal degildir 
+    print(sayi," Asal Degil...")  # bolunmusse asal degildir 
     break   # donguden cik 
   else:
-    print("Sayi Asal sayidir...Kendisinden baska hicbir boluneni yok.")   # degilse asaldir 
+    print(sayi, " Asal sayidir...Kendisinden baska hicbir boluneni yok.")   # degilse asaldir 
     break   #donguden cik 
 
 
@@ -211,8 +237,8 @@ for i in range(2,sayi):
     sayac+=1   # eger bolunuyorsa sayaci 1 arttir 
     break
 if sayac!=0:  #sayac 0dan farkliysa yani bolundugu bir deger varsa 
-  print("Asal sayi degildir")   # asal degil 
+  print(sayi," Asal sayi degildir")   # asal degil 
 else:
-  print("Asal sayidir")
+  print(sayi," Asal sayidir")
 
 
