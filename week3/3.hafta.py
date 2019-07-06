@@ -4,12 +4,12 @@
 #Kullanici daha once girilmis olan bir kullanici adiyla hesap olusturmak isterse, bu kullanici adinin daha once secildigini ve baska bir kullanici adiyla hesap olusturmasini isteyin.
 
 print("\t HESAP OLUSTUR \n 1. Hesap Olustur/n 2. Cikis icin tiklayiniz")
-secim= str(input("Seciminiz:"))
+secim= input("Seciminiz:")
 if secim=="2":
   print("Program kapatiliyor")
 elif secim=='1':
   while True:        # kullanicinin varolan kullaniciadi secmesi ihtimalinden kodlari dongu icine aldik
-    kullaniciadi=str(input("Kullanici Adiniz: "))  
+    kullaniciadi=input("Kullanici Adiniz: ")
     parola=str(input("Parolaniz: "))
     file=open("HesapBilgileri.txt","r")  # dosyamizi readable olarak actik
     veri=file.read() # dosya icindeki verileri string deger olarak veri degiskenine atadik 
@@ -77,6 +77,8 @@ for  i in range(1,50):     #bulana kadar azami 50 deneme hakki verdik
       print("Ooo cok yaklastin.. Hadi bakalim ... Biraz daha yukari..")  # bu uyariyi ver 
     else:  # degilse 
       print("Fazla yukari ciktin daha buyuk sayi...")  # bu uyariyi ver 
+else:
+  print("Deneme hakkiniz bitti...")
 
 
 
@@ -86,7 +88,7 @@ for  i in range(1,50):     #bulana kadar azami 50 deneme hakki verdik
 
 print("\n DOSYA AYIKLAMA \n")
 
-file=open("futbolcular.txt")  # ayiklayacagimiz dosyayi actik
+file=open("futbolcular.txt",'r')  # ayiklayacagimiz dosyayi actik
 veri=file.readlines()  # dosya icindekileri satir satir liste seklinde veri degiskenine atadik
 for i in veri:  #veri listesindeki elemanlari tek tek gostermek icin for dongusu actik 
   if "Fenerbahçe" in i:  #eger listenin elemaninda yani bir satirlarinda Fenerbahce varsa
@@ -136,11 +138,7 @@ menuhacim="""
 \t\tHACIM HESAPLAMALARI
 \ta. Kup
 \tb. Kure
-\tc. Koni
-
-"""
-
-
+\tc. Koni"""
 while True:
   print(menu)
   islem=str(input("\nIstediginiz islemin numarasini giriniz: "))
