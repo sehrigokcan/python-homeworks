@@ -92,7 +92,7 @@ while True:
   bilgi=" {0}\n\t\t{1} HAKKINIZ KALDI\n\n\n".format(adamasmaca[hak],hak)  # durum bilgisi 
   print(bilgi) # yazdiriyoruz 
   for i in k:  # kelimeyi yazdiriyoruz 
-    print(i,end=" ")
+    print(*i,end=" ")
   
   harf=input("\nHarf Giriniz: ")   # harf tahminini kullnicidan istedik 
   if not harf.isalpha() or len(harf)!=1:  # eger harf girisi dogru degilse 
@@ -120,12 +120,12 @@ while True:
     break  # hakki bittigine gore donguden cikabiliriz 
 
 
-
-
-
-##
 ##*ODEV 2:SAYI TAHMIN OYUNU:*
-## Kendiniz 4 basamakli, rakamlari birbirinden farkli ve icerisinde 0 rakaminin yer almadigi bir sayi belirleyin. Kullanicidan bu sayiyi tahmin etmesini isteyin. Yapilan tahmin sonucu kullanicinin, tahminde bulundugu sayidaki rakamlarin degeri ve yeri dogruysa +1, degeri dogru fakat yeri dogru degilse -1 ciktisi verecegiz. Bu sekilde tahminde bulunmaya devam etmesi saglanacak ve sayiyi tam bir sekilde dogru bildiginde gerekli bilgilendirme yapilip oyun bitirilecek.
+## Kendiniz 4 basamakli, rakamlari birbirinden farkli ve icerisinde 0 rakaminin yer almadigi bir sayi belirleyin. 
+# Kullanicidan bu sayiyi tahmin etmesini isteyin. Yapilan tahmin sonucu kullanicinin, 
+# tahminde bulundugu sayidaki rakamlarin degeri ve yeri dogruysa +1, degeri dogru fakat yeri dogru degilse -1 ciktisi verecegiz. 
+# Bu sekilde tahminde bulunmaya devam etmesi saglanacak ve 
+# sayiyi tam bir sekilde dogru bildiginde gerekli bilgilendirme yapilip oyun bitirilecek.
 ##
 ##  Ornek:           sayi = 1234
 ##
@@ -148,8 +148,11 @@ while True:
 ##         yapilan tahmin = 2146
 ##
 ##         ornek output = +0 -3
+print("""\nSAYI TAHMIN OYUNU
 
-
+Not: Lutfen rakamlari birbirinden ve 0dan farkli 4 basamakli sayi girisi yapiniz.
+Cikis icin "q" tusuna tiklayabilirsiniz...
+""")
 
 
 sayi="1234"  # sayim 
@@ -159,24 +162,18 @@ s=0  # sayacim 0
 while True:
   deger1=0  # deger1 0
   deger2=-0  # deger2 0
-  tahmin=list(input("{}. Tahmininizi Giriniz: ".format(s)))  # tahmin istedik kontrol kolayligi icin listeye cevirdik
   s+=1  # sayacimi bir artirdim 
-
+  tahmin=list(input("{}. Tahmininizi Giriniz: ".format(s)))  # tahmin istedik kontrol kolayligi icin listeye cevirdik
+  
   for i in tahmin:   # tahmin listemizde donguyle geziyoruz 
     if i in sayi and tahmin.index(i)==sayi.index(i):  # eger sayi listemde i varsa ve indexleri esitse 
       deger1+=1  # deger1 1 arttir 
     elif i in sayi:  # eger sadece icinde varsa indexleri ayni degilse 
       deger2+=1 # deger2 1 arttir 
-    if sayi==tahmin:  # esitse sayi ile tahmin 
-      print("Tebrikler tahmin dogru...")  # tebrik ettik
-      quit()  # programi kapattik 
+  if sayi==tahmin:  # esitse sayi ile tahmin 
+    print("Tebrikler tahmin dogru...")  # tebrik ettik
+    break  # programi kapattik 
   print("+{}  -{}".format(deger1,deger2))   # dongu her bittiginde +deger1 ve -deger2 olarak gosterecek 
-      
-
-
-
-
-
 
 
 ##*BONUS ODEV:*
@@ -192,15 +189,17 @@ while True:
 ## # 2. [a1, a2, a3, b1, b2, b3, c1, c2, c3]
 
 sayilar=["1","2","3","4","5","6","7","8","9","10"]  #10 sayi 
-harfler=['a','b','c',"d","e","f","g","h","i","i"]  # 10 harf 
+harfler=['a','b','c',"d","e","f","g","h","i","i"]  # 10 harf
 liste1=[]
 liste2=[]
 for i in sayilar:  # sayilar listesi elemanlari 
     for b in harfler:  # harfler listesi elemanlari 
-      liste1+=[i+b]  # sirasi ile liste1 yazdir 
+      liste1.append(i+b) #sirasi ile liste1 yazdir  
+
+
 for i in harfler:
   for b in sayilar:
-    liste2+=[i+b]
+    liste2.append(i+b) 
 
-print(liste1)
-print(liste2)
+print("1: ",liste1)
+print("2: ",liste2)
