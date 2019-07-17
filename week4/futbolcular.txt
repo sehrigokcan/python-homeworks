@@ -1,70 +1,70 @@
-Volkan Demirel,Fenerbahçe
-Mauricio Isla,Fenerbahçe
-Hasan Ali Kaldýrým,Fenerbahçe
-Simon Kjær,Fenerbahçe
-Mehmet Topal,Fenerbahçe
-Alper Potuk,Fenerbahçe
-Ozan Tufan,Fenerbahçe
-Fernandão,Fenerbahçe
-Robin van Persie,Fenerbahçe
-Mehmet Ekici,Fenerbahçe
-Uygar Zeybek,Fenerbahçe
-Nabil Dirar,Fenerbahçe
-Idriss Carlos Kameni,Fenerbahçe
-Þener Özbayraklý,Fenerbahçe
-Volkan Þen,Fenerbahçe
-Ismail Köybasi,Fenerbahçe
-Gregory van der Wiel,Fenerbahçe
-Mathieu Valbuena,Fenerbahçe
-Roman Neustädter,Fenerbahçe
-Martin Škrtel,Fenerbahçe
-Salih Uçan,Fenerbahçe
-Josef de Souza,Fenerbahçe
-Aatif Chahechouhe,Fenerbahçe
-Miroslav Stoch,Fenerbahçe
+Volkan Demirel,Fenerbahï¿½e
+Mauricio Isla,Fenerbahï¿½e
+Hasan Ali Kaldï¿½rï¿½m,Fenerbahï¿½e
+Simon Kjï¿½r,Fenerbahï¿½e
+Mehmet Topal,Fenerbahï¿½e
+Alper Potuk,Fenerbahï¿½e
+Ozan Tufan,Fenerbahï¿½e
+Fernandï¿½o,Fenerbahï¿½e
+Robin van Persie,Fenerbahï¿½e
+Mehmet Ekici,Fenerbahï¿½e
+Uygar Zeybek,Fenerbahï¿½e
+Nabil Dirar,Fenerbahï¿½e
+Idriss Carlos Kameni,Fenerbahï¿½e
+ï¿½ener ï¿½zbayraklï¿½,Fenerbahï¿½e
+Volkan ï¿½en,Fenerbahï¿½e
+Ismail Kï¿½ybasi,Fenerbahï¿½e
+Gregory van der Wiel,Fenerbahï¿½e
+Mathieu Valbuena,Fenerbahï¿½e
+Roman Neustï¿½dter,Fenerbahï¿½e
+Martin ï¿½krtel,Fenerbahï¿½e
+Salih Uï¿½an,Fenerbahï¿½e
+Josef de Souza,Fenerbahï¿½e
+Aatif Chahechouhe,Fenerbahï¿½e
+Miroslav Stoch,Fenerbahï¿½e
 Fernando Muslera,Galatasaray
 Mariano Ferreira,Galatasaray
 Maicon Pereira,Galatasaray
 Serdar Aziz,Galatasaray
-Ahmet Çalik,Galatasaray
+Ahmet ï¿½alik,Galatasaray
 Tolga Cigerci,Galatasaray
-Yasin Öztekin,Galatasaray
-Selçuk Inan,Galatasaray
+Yasin ï¿½ztekin,Galatasaray
+Selï¿½uk Inan,Galatasaray
 Eren Derdiyok,Galatasaray
-Younès Belhanda,Galatasaray
-Sinan Gümüs,Galatasaray
+Younï¿½s Belhanda,Galatasaray
+Sinan Gï¿½mï¿½s,Galatasaray
 Martin Linnes,Galatasaray
 Ryan Donk,Galatasaray
 Emrah Bassan,Galatasaray
-Bafétimbi Gomis,Galatasaray
-Tarik Çamdal,Galatasaray
+Bafï¿½timbi Gomis,Galatasaray
+Tarik ï¿½amdal,Galatasaray
 Hakan Balta,Galatasaray
 Lionel Carole,Galatasaray
 Garry Rodrigues,Galatasaray
-Koray Günter,Galatasaray
+Koray GÃ¼nter,Galatasaray
 Nigel de Jong,Galatasaray
 Luis Cavanda,Galatasaray
 Eray Iscan,Galatasaray
-Alexander Miloševic,Besiktas
+Alexander MiloÃ§evic,Besiktas
 Pepe,Besiktas
-Duško Tošic,Besiktas
+Duï¿½ko Toï¿½ic,Besiktas
 Ricardo Quaresma,Besiktas
 Veli Kavlak,Besiktas
 Mustafa Pektemek,Besiktas
 Atiba Hutchinson,Besiktas
-Oðuzhan Özyakup,Besiktas
-Gökhan Töre,Besiktas
+OÄŸuzhan Ã–zyakup,Besiktas
+GÃ¶khan TÃ¶re,Besiktas
 Tolgay Arslan,Besiktas
 Pedro Franco,Besiktas
 Necip Uysal,Besiktas
-Aras Özbiliz,Besiktas
+Aras Ã–zbiliz,Besiktas
 Cenk Tosun,Besiktas
 Tolga Zengin,Besiktas
 Andreas Beck,Besiktas
-Atýnç Nukan,Besiktas
+Atena Nukan,Besiktas
 Ryan Babel,Besiktas
 Denys Boyko,Besiktas
-Gökhan Gönül,Besiktas
+Gkhan GÃ¶nÃ¼l,Besiktas
 Caner Erkin,Besiktas
 Talisca,Besiktas
 Utku Yuvakuran,Besiktas

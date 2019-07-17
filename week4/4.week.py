@@ -69,7 +69,7 @@ for i in liste:  # lstedeki elemanlari kontrol icin for dongusune aldik
 with open("futbolcular.txt") as file:  # dosyayi actik
   futbolcular=file.read()  #dosya degerlerini strıng seklınde degıskene attık
   
-kaynak="şçöğüiŞÇÖĞÜİ"  
+kaynak="şçöğüiŞÇÖĞÜİ"
 hedef="scoguiSCOGUI"
 tablo=str.maketrans(kaynak,hedef)  # ceviri tablosu olusturduk str.maketrans metodu ile
 
